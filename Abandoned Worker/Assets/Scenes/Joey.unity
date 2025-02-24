@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 4644675}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -801,6 +801,7 @@ GameObject:
   - component: {fileID: 1591988117}
   - component: {fileID: 1591988116}
   - component: {fileID: 1591988115}
+  - component: {fileID: 1591988118}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Player
@@ -967,6 +968,24 @@ MonoBehaviour:
   staminaDrainRate: 2
   playerCamera: {fileID: 925756897}
   staminaBar: {fileID: 547826812}
+--- !u!114 &1591988118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591988110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47be535e8b13d394b951024996328c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holdPosition: {fileID: 925756897}
+  pickupRange: 3
+  pickupLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  pickupKey: 101
 --- !u!1 &1984611545
 GameObject:
   m_ObjectHideFlags: 0
