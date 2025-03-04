@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -7,41 +6,23 @@ public class PlayerMovement : MonoBehaviour
     public float sprintSpeed = 10f;
     public float jumpForce = 5f;
     public float mouseSensitivity = 100f;
-    public float maxStamina = 5f;
-    public float staminaRegenRate = 1f;
-    public float staminaDrainRate = 2f;
     public Transform playerCamera;
-    public Image staminaBar;
 
     private float xRotation = 0f;
     private Rigidbody rb;
     private bool isGrounded;
-    private float currentStamina;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         Cursor.lockState = CursorLockMode.Locked;
-        currentStamina = maxStamina;
     }
 
     void Update()
     {
-        bool isSprinting = Input.GetKey(KeyCode.LeftShift) && currentStamina > 0;
+        bool isSprinting = Input.GetKey(KeyCode.LeftShift);
         float currentSpeed = isSprinting ? sprintSpeed : speed;
-
-        if (isSprinting)
-        {
-            currentStamina -= staminaDrainRate * Time.deltaTime;
-        }
-        else if (currentStamina < maxStamina)
-        {
-            currentStamina += staminaRegenRate * Time.deltaTime;
-        }
-
-        currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
-        staminaBar.fillAmount = currentStamina / maxStamina;
 
         // Movement
         float moveX = Input.GetAxis("Horizontal");
