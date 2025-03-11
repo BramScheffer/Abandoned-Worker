@@ -376,7 +376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1591988114}
   sensitivity: 100
-  bobIntensity: 0.1
+  bobIntensity: 0.07
   bobFrequency: 8
 --- !u!1 &925756894
 GameObject:
