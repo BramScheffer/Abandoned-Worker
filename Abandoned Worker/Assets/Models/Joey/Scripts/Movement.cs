@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float xRotation = 0f;
     private Rigidbody rb;
-    private bool isGrounded;
+    public bool isGrounded;
 
     void Start()
     {
