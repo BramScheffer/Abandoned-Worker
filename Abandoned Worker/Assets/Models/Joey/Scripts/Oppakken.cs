@@ -1,38 +1,79 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpBlock : MonoBehaviour
+public class ObjectPickup : MonoBehaviour
 {
-    public GameObject pickUpText;
-    public GameObject BlockOnPlayer;
+    public float pickupRange = 3f; // How far you can pick up objects
+    public Transform holdPoint; // Assign in the inspector (child of player)
+    public float moveSpeed = 15f; // Speed of moving the object to the hold point
+    public float rotationSpeed = 10f; // Rotation smoothing speed
 
-    void Start()
+    private GameObject heldObject;
+    private Rigidbody heldRb;
+
+    void Update()
     {
-        pickUpText.SetActive(false);
+        if (Input.GetKeyDown(KeyCode.E)) // Press E to pick up/drop
+        {
+            if (heldObject == null)
+            {
+                TryPickupObject();
+            }
+            else
+            {
+                DropObject();
+            }
+        }
+
+        if (heldObject != null)
+        {
+            MoveObjectToHoldPoint();
+        }
     }
 
-    private void OnTriggerStay(Collider other)
+    void TryPickupObject()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            pickUpText.SetActive(true);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
-            // Check if 'E' key is held down to pick up the Block
-            if (Input.GetKey(KeyCode.E))
+        if (Physics.Raycast(ray, out hit, pickupRange))
+        {
+            if (hit.collider.gameObject.CompareTag("Pickable")) // Ensure objects have this tag
             {
-                gameObject.SetActive(false);
-                BlockOnPlayer.SetActive(true);
-                pickUpText.SetActive(false);
+                heldObject = hit.collider.gameObject;
+                heldRb = heldObject.GetComponent<Rigidbody>();
+
+                if (heldRb != null)
+                {
+                    heldRb.useGravity = false;
+                    heldRb.freezeRotation = true;
+                    heldRb.velocity = Vector3.zero;
+                    heldRb.angularVelocity = Vector3.zero;
+
+                    // Parent to holdPoint so it rotates with the player
+                    heldObject.transform.SetParent(holdPoint);
+                }
             }
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    void MoveObjectToHoldPoint()
     {
-        if (other.gameObject.CompareTag("Player"))
+        // Smoothly move the object to the hold position
+        heldObject.transform.position = Vector3.Lerp(heldObject.transform.position, holdPoint.position, moveSpeed * Time.deltaTime);
+
+        // Smoothly rotate the object to match the hold point’s rotation
+        heldObject.transform.rotation = Quaternion.Slerp(heldObject.transform.rotation, holdPoint.rotation, rotationSpeed * Time.deltaTime);
+    }
+
+    void DropObject()
+    {
+        if (heldRb != null)
         {
-            pickUpText.SetActive(false);
+            heldRb.useGravity = true;
+            heldRb.freezeRotation = false;
+            heldObject.transform.parent = null; // Unparent the object
+            heldRb = null;
         }
+        heldObject = null;
     }
 }
