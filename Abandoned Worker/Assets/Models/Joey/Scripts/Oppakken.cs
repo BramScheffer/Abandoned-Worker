@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ObjectPickup : MonoBehaviour
 {
@@ -61,7 +61,7 @@ public class ObjectPickup : MonoBehaviour
         // Smoothly move the object to the hold position
         heldObject.transform.position = Vector3.Lerp(heldObject.transform.position, holdPoint.position, moveSpeed * Time.deltaTime);
 
-        // Smoothly rotate the object to match the hold point�s rotation
+        // Smoothly rotate the object to match the hold point’s rotation
         heldObject.transform.rotation = Quaternion.Slerp(heldObject.transform.rotation, holdPoint.rotation, rotationSpeed * Time.deltaTime);
     }
 
@@ -77,3 +77,5 @@ public class ObjectPickup : MonoBehaviour
         heldObject = null;
     }
 }
+
+
