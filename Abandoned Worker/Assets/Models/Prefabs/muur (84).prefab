@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5867863869886120945
+--- !u!1001 &3215343216407964017
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,19 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 304d8a2f02c120f4a8fcee8a2bf770ba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.4962234
+      value: -31.999992
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 304d8a2f02c120f4a8fcee8a2bf770ba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.10000074
+      value: 0.10000032
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 304d8a2f02c120f4a8fcee8a2bf770ba, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.898359
+      value: 0.000004529953
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 304d8a2f02c120f4a8fcee8a2bf770ba, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 304d8a2f02c120f4a8fcee8a2bf770ba, type: 3}
       propertyPath: m_LocalRotation.x
@@ -30,11 +30,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 304d8a2f02c120f4a8fcee8a2bf770ba, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 304d8a2f02c120f4a8fcee8a2bf770ba, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 304d8a2f02c120f4a8fcee8a2bf770ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -42,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 304d8a2f02c120f4a8fcee8a2bf770ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 304d8a2f02c120f4a8fcee8a2bf770ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3610c691e98ebac4ba2ea9f377588557, type: 2}
     - target: {fileID: 919132149155446097, guid: 304d8a2f02c120f4a8fcee8a2bf770ba, type: 3}
       propertyPath: m_Name
-      value: muur (2)
+      value: muur (84)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -62,20 +62,20 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 304d8a2f02c120f4a8fcee8a2bf770ba, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2582371328430566492}
+      addedObject: {fileID: -5578908616956406001}
   m_SourcePrefab: {fileID: 100100000, guid: 304d8a2f02c120f4a8fcee8a2bf770ba, type: 3}
---- !u!1 &6750824134112214688 stripped
+--- !u!1 &2332398754440172576 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 304d8a2f02c120f4a8fcee8a2bf770ba, type: 3}
-  m_PrefabInstance: {fileID: 5867863869886120945}
+  m_PrefabInstance: {fileID: 3215343216407964017}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &2582371328430566492
-MeshCollider:
+--- !u!65 &-5578908616956406001
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6750824134112214688}
+  m_GameObject: {fileID: 2332398754440172576}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -87,7 +87,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7196802604745430461, guid: 304d8a2f02c120f4a8fcee8a2bf770ba, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0, y: 3, z: 2.0000005}
+  m_Center: {x: -1.0000002, y: 1.5, z: 0}
