@@ -54,10 +54,40 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: fc092cd60fa643b419bcb52f7d43770a, type: 2}
     - target: {fileID: 919132149155446097, guid: 751ff8c01a92b7242a43c857fba038d8, type: 3}
       propertyPath: m_Name
-      value: Monitor
+      value: Monitor Kapot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 751ff8c01a92b7242a43c857fba038d8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5274966616030303514}
   m_SourcePrefab: {fileID: 100100000, guid: 751ff8c01a92b7242a43c857fba038d8, type: 3}
+--- !u!1 &5592654470885180289 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 751ff8c01a92b7242a43c857fba038d8, type: 3}
+  m_PrefabInstance: {fileID: 4709762789903810256}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &5274966616030303514
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5592654470885180289}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8678823145569952518, guid: 751ff8c01a92b7242a43c857fba038d8, type: 3}
